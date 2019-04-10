@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>login uygulaması</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"/>
+    <script src="/webjars/jquery/3.3.1-1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div  sec:authorize="isAnonymous()">
+    <h2>Giriş Sayfası Hoşgeldiniz</h2>
+    <div class="margin-top20 text-center"><a th:href="@{/login}">giriş yapmak için tıkla</a>
+        </div>
+</div>
+
+<div sec:authorize="isAuthenticated()">
+<h2>Giriş Yapıldı</h2>
+    <div class="margin-top20 text-center"><a th:href="@{/home}">çıkış yapmak için tıkla</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
